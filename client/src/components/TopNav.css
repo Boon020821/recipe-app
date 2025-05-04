@@ -1,0 +1,313 @@
+/* src/components/Nav.css */
+.top-nav {
+    background: #e6e6fa;
+    height: 25vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+  
+  .nav-logo {
+    height: 50%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+    position: absolute;
+    left: 10%;
+    top: 0;
+  }
+  
+  /* 新增搜索栏样式 */
+  .search-wrapper {
+    position: absolute;
+    left: 25%; /* 10% + 15% + 5% */
+    top: 0;
+    height: 50%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar {
+    width: 100%;
+    height: 40%;
+    padding: 0 20px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar:focus {
+    outline: none;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+  }
+  
+  .social-media {
+    position: absolute;
+    left: 60%; /* 10% + 15% + 5% + 30% = 60% → 从60%开始占30% */
+    top: 25%;
+    transform: translateY(-50%);
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0rem;
+  }
+  
+  .social-icon {
+    font-size: 4rem;
+    color: black;
+    transition: all 0.3s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+  }
+  
+  .social-icon:hover {
+    color: blue;
+    transform: scale(1.15);
+  }
+  
+  .social-icon:active {
+    color: green;
+  }
+  
+  .user-section {
+    position: absolute;
+    left: 80%; /* 60% + 25%社交媒体宽度 */
+    top: 25%;
+    transform: translateY(-50%);
+    width: 15%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-icon {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+  .profile-icon:hover {
+    color: #1976d2 !important;
+    transform: scale(1.1);
+  }
+  
+  .auth-links a {
+    color: black;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative; /* 添加相对定位 */
+    padding: 0 0.5rem; /* 增加内边距 */
+  }
+  
+  .auth-links a:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -0.4rem;
+    color: black; 
+    font-weight: 300;
+  }
+  
+  .auth-links a:hover {
+    color: blue;
+  }
+  
+  .auth-links a:active {
+    color: green;
+  }
+  
+  /* 新增食材基准线 */
+  .top-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 62%; 
+    height: 2px;
+    background: linear-gradient(90deg, 
+      rgba(75,0,130,0) 0%,
+      #4b0082 20%,
+      #4b0082 80%,
+      rgba(75,0,130,0) 100%
+    ); /* 渐变效果 */
+    z-index: 2; /* 在Logo和搜索栏下方 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .ingredient-strip {
+    position: absolute;
+    top: 55%;
+    left: 1%;
+    right: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3; /* 在基准线上方 */
+  }
+  
+  .ingredient-strip img {
+    height: 30px;
+    width: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+  }
+  
+  .ingredient-strip img:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* src/components/Nav.css 新增样式 */
+  .main-navigation {
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 0rem; /* 通过margin控制间距 */
+  }
+  
+  /* 导航项容器 */
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 竖线分隔符 */
+  .nav-item:not(:last-child)::after {
+    content: "|";
+    color: black;
+    font-weight: 300;
+    margin: 0 2rem; /* 精准控制竖线间距 */
+  }
+  
+  .nav-item a:hover {
+    color: #8a2be2;
+    transform: scale(1.15);
+  }
+  
+  .nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  /* 响应式调整 */
+  @media (max-width: 768px) {
+    .nav-logo {
+      left: 0%;
+      height: 50%;
+    }
+  
+    .search-wrapper {
+      left: 25%;
+      width: 30%;
+    }
+  
+    .search-bar {
+      height: 50%;
+      font-size: 14px;
+    }
+  
+    .social-media {
+      left: 57%;
+      width: 20%;
+      gap: 0rem;
+      top: 25%;
+    }
+  
+    .social-icon {
+      font-size: 2.5rem;
+    }
+  
+    .user-section {
+      left: 80%;
+      flex-direction: row;
+      text-align: center;
+      gap: 0.5rem;
+    }
+  
+    .user-icon {
+      font-size: 2.8rem;
+    }
+  
+    .auth-links {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+  
+    .auth-links a {
+      font-size: 1.0rem;
+      text-decoration: none;
+    }
+  
+    /* 添加横线分隔 */
+    .auth-links::after {
+      content: "";
+      position: absolute;
+      top: 55%;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: #4b0082;
+      width: 80%;
+      margin: 0 auto;
+      transform: translateY(-50%);
+    }
+  
+    /* 移除桌面端分隔线 */
+    .auth-links a:not(:last-child)::after {
+      display: none;
+    }
+  
+    .ingredient-strip {
+      top: 58%;
+    }
+  
+    .ingredient-strip img {
+      height: 20px;
+    }
+  
+    .main-navigation {
+      height: 25%;
+    }
+    
+    .nav-links {
+      gap: 1.5rem;
+      justify-content: space-around;
+    }
+    .nav-item {
+      padding: 0.5rem 0;
+    }
+    
+    .nav-item:not(:last-child)::after {
+      margin: 0 0.8rem;
+    }
+    
+    .nav-links a {
+      font-size: 1rem;
+    }
+  
+    .nav-links a {
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+  
+    .nav-links a:not(:last-child)::after {
+      margin: 0 0.5rem;
+    }
+  }

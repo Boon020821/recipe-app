@@ -1,0 +1,115 @@
+/* src/pages/RecipeDetail.css */
+.recipe-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .recipe-detail-card {
+    width: 70%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .recipe-detail-card img {
+    width: 100%;
+    height: auto; /* 改为自适应高度 */
+    max-height: 600px; /* 设置最大高度 */
+    object-fit: contain; /* 保持图片完整比例 */
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .detail-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .detail-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+  }
+  
+  .detail-section h2 {
+    color: #8a2be2;
+    margin-bottom: 1rem;
+  }
+  
+  .ingredients-list {
+    columns: 2;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .instructions-list {
+    list-style-type: none;
+    counter-reset: instruction-step;
+  }
+  
+  .instructions-list li {
+    counter-increment: instruction-step;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  
+  .instructions-list li::before {
+    content: counter(instruction-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ff6b6b;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .like-section {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .like-btn {
+    padding: 0.8rem 2rem;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .like-btn.liked {
+    background: #ff6b81;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .recipe-detail-card {
+      width: 90%;
+      padding: 1rem;
+    }
+    
+    .detail-image {
+      height: 250px;
+    }
+    
+    .ingredients-list {
+      columns: 1;
+    }
+  }

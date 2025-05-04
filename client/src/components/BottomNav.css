@@ -1,0 +1,127 @@
+/* src/components/Nav.css */
+/* 新增底部导航栏样式 */
+.bottom-container {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+  
+  /* 浅紫色区域 */
+  .bottom-nav {
+    background: #e6e6fa;
+    padding: 1rem 10%;
+    display: flex;
+    gap: 3rem;
+    height: 12rem; /* 控制最小高度 */
+  }
+  
+  /* 左侧布局 */
+  .nav-left {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+  }
+  
+  .logo-section {
+    flex: 1;
+  }
+  
+  .footer-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .social-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .bottom-social a {
+    padding: 0 0.5rem;
+  }
+  
+  .nav-right {
+    flex: 1;
+    display: flex;
+    padding-top: 1.8rem;
+    justify-content: space-around;
+    z-index: 10;
+  }
+  
+  .nav-column {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .nav-column a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .nav-column a:hover {
+    color: #8a2be2;
+    transform: translateX(5px);
+  }
+  
+  /* 白色版权区域 */
+  .copyright-section {
+    background: white;
+    padding: 0.8rem 0;
+    text-align: center;
+    border-top: 2px solid #e6e6fa;
+  }
+  
+  .copyright-section p {
+    color: black;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .bottom-nav {
+      flex-direction: row;
+      gap: 2rem;
+      padding: 1.5rem 5%;
+    }
+  
+    .nav-left {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .social-section {
+      flex-direction: column;
+      align-items: flex-start; /* 保持文字左对齐 */
+      gap: 0.5rem; /* 控制文字与图标间距 */
+    }
+  
+    .bottom-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.2rem; /* 增加上边距 */
+      transform: translateY(-5px); /* 微调图标位置 */
+    }
+  
+    /* 如果需要更精确控制 */
+    .social-section p {
+      margin-bottom: 0.8rem; /* 单独控制文字下方间距 */
+    }
+  
+    .nav-right {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+  
+    .nav-column{
+      font-size: 1rem;
+    }
+  }

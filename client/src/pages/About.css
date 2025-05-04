@@ -1,0 +1,90 @@
+/* 基础样式 */
+.about-container {
+    padding: 4rem 2rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin: 3rem 0;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  /* 使命宣言 */
+  .mission-section {
+    padding: 3rem;
+    margin: 2rem 0;
+    background: #f9f9f9;
+    border-radius: 15px;
+  }
+  
+  /* 核心价值 */
+  .value-card {
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* 团队成员 */
+  .member-card {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .member-name {
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+  }
+  
+  .member-bio {
+    color: #666;
+    margin-top: 1rem;
+  }
+  
+  /* 时间线 */
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto;
+  }
+  
+  .timeline-item {
+    display: flex;
+    margin: 2rem 0;
+  }
+  
+  .timeline-date {
+    width: 120px;
+    font-weight: 500;
+    color: #e74c3c;
+  }
+  
+  .timeline-content {
+    flex: 1;
+    padding-left: 2rem;
+    border-left: 3px solid #3498db;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .mission-section {
+      padding: 2rem;
+    }
+  
+    .timeline-item {
+      flex-direction: column;
+    }
+  
+    .timeline-date {
+      margin-bottom: 1rem;
+    }
+  }

@@ -1,0 +1,13 @@
+// client/.eslintrc.json
+{
+  "extends": ["react-app", "plugin:react/recommended"],
+  "rules": {
+    "no-unused-vars": "warn",   // 未使用变量警告
+    "react/prop-types": "off"    // 关闭 prop-types 检查（TypeScript 项目可忽略）
+  },
+  "settings": {
+    "react": {
+      "version": "detect"        // 自动检测 React 版本
+    }
+  }
+}
